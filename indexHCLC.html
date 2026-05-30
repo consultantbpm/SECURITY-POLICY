@@ -8,104 +8,147 @@
 <style>
 :root {
     color-scheme: light dark;
-    --bg: #ffffff;
+    --bg-page: #f5f3ee;
+    --bg-card: #ffffff;
     --fg: #1a1a1a;
-    --muted: #555;
-    --accent: #b8860b;
-    --rule: #e5e5e5;
-    --card: #fafafa;
+    --fg-soft: #525252;
+    --fg-muted: #8a8a8a;
+    --accent: #d4a017;
+    --accent-soft: #fff7d6;
+    --accent-bar: #1a1a1a;
+    --rule: #ece8df;
+    --shadow: 0 8px 32px rgba(20, 18, 12, 0.06), 0 2px 6px rgba(20, 18, 12, 0.04);
 }
 @media (prefers-color-scheme: dark) {
     :root {
-        --bg: #0f0f0f;
-        --fg: #ececec;
-        --muted: #9a9a9a;
+        --bg-page: #0a0a0a;
+        --bg-card: #161412;
+        --fg: #f3f1ec;
+        --fg-soft: #c7c4bd;
+        --fg-muted: #7d7a72;
         --accent: #ffcc00;
-        --rule: #2a2a2a;
-        --card: #181818;
+        --accent-soft: #2a2206;
+        --accent-bar: #ffcc00;
+        --rule: #2a2622;
+        --shadow: 0 12px 48px rgba(0, 0, 0, 0.5), 0 2px 6px rgba(0, 0, 0, 0.3);
     }
 }
+
 * { box-sizing: border-box; }
 html, body { margin: 0; padding: 0; }
 body {
-    background: var(--bg);
+    background: var(--bg-page);
     color: var(--fg);
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
     font-size: 17px;
     line-height: 1.65;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    padding: 32px 16px 64px;
 }
+
 main {
-    max-width: 720px;
+    max-width: 760px;
     margin: 0 auto;
-    padding: 48px 24px 64px;
 }
-h1 {
-    font-size: 1.75rem;
-    line-height: 1.25;
-    margin: 0 0 8px;
-    letter-spacing: -0.01em;
-}
-.updated {
-    color: var(--muted);
-    font-size: 0.9rem;
-    margin: 0 0 32px;
-}
-.intro {
-    background: var(--card);
+
+.eyebrow {
+    display: inline-block;
+    font-size: 0.7rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--fg-muted);
+    margin: 0 0 12px;
+    padding-left: 14px;
     border-left: 3px solid var(--accent);
-    padding: 16px 20px;
-    border-radius: 4px;
+}
+
+h1 {
+    font-size: clamp(1.6rem, 4.5vw, 2.25rem);
+    line-height: 1.15;
+    margin: 0 0 12px;
+    letter-spacing: -0.02em;
+    font-weight: 800;
+}
+
+.updated {
+    color: var(--fg-muted);
+    font-size: 0.875rem;
     margin: 0 0 32px;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
 }
+.updated::before {
+    content: "";
+    display: inline-block;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--accent);
+}
+
+.card {
+    background: var(--bg-card);
+    border-radius: 16px;
+    padding: 40px;
+    box-shadow: var(--shadow);
+    border: 1px solid var(--rule);
+}
+
+.intro {
+    background: var(--accent-soft);
+    border-radius: 10px;
+    padding: 18px 22px;
+    margin: 0 0 36px;
+    color: var(--fg);
+    font-size: 1.02rem;
+}
+.intro p { margin: 0; }
+
+section {
+    display: grid;
+    grid-template-columns: 48px 1fr;
+    gap: 18px;
+    padding: 22px 0;
+    border-top: 1px solid var(--rule);
+}
+section:first-of-type { border-top: none; padding-top: 4px; }
+section:last-of-type { padding-bottom: 4px; }
+
+.num {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background: var(--accent-bar);
+    color: var(--accent);
+    font-size: 0.95rem;
+    font-weight: 700;
+    font-variant-numeric: tabular-nums;
+    margin-top: 2px;
+    flex-shrink: 0;
+}
+
 h2 {
-    font-size: 1.15rem;
-    margin: 32px 0 8px;
-    padding-top: 16px;
-    border-top: 1px solid var(--rule);
+    font-size: 1.1rem;
+    margin: 0 0 6px;
+    font-weight: 700;
+    letter-spacing: -0.01em;
+    color: var(--fg);
 }
-h2:first-of-type { border-top: none; padding-top: 0; }
-p { margin: 0 0 12px; }
-a { color: var(--accent); text-decoration: underline; text-underline-offset: 2px; }
-a:hover { text-decoration: none; }
-footer {
-    margin-top: 48px;
-    padding-top: 24px;
-    border-top: 1px solid var(--rule);
-    color: var(--muted);
-    font-size: 0.85rem;
-    text-align: center;
+
+p {
+    margin: 0 0 8px;
+    color: var(--fg-soft);
 }
-</style>
-</head>
-<body>
-<main>
-    <h1>Politica de Confidențialitate pentru High Contrast Large Retro CLR</h1>
-    <p class="updated">Ultima actualizare: 30.04.2026</p>
+p:last-child { margin-bottom: 0; }
 
-    <div class="intro">
-        <p>Această politică de confidențialitate descrie modul în care <a href="mailto:consultantbpm@gmail.com">consultantbpm@gmail.com</a> colectează, utilizează și protejează informațiile tale atunci când utilizezi aplicația noastră.</p>
-    </div>
-
-    <h2>1. Colectarea și Utilizarea Informațiilor</h2>
-    <p>Nu solicităm să ne furnizați informații de identificare personală.</p>
-
-    <h2>2. Date de Jurnal (Log Data)</h2>
-    <p>În cazul unei erori în aplicație, colectăm date și informații prin intermediul unor produse terțe (prin Google Log Data). Acestea pot include adresa IP a dispozitivului, numele dispozitivului, versiunea sistemului de operare și ora/data utilizării.</p>
-
-    <h2>3. Securitate</h2>
-    <p>Depunem eforturi pentru a folosi mijloace comerciale acceptabile de protejare a datelor. Totuși, nicio metodă de transmitere pe internet nu este 100% sigură.</p>
-
-    <h2>4. Link-uri către Alte Site-uri</h2>
-    <p>Acest serviciu nu conține link-uri către alte site-uri.</p>
-
-    <h2>5. Contact</h2>
-    <p>Dacă aveți întrebări sau sugestii despre politica noastră de confidențialitate, nu ezitați să ne contactați la: <a href="mailto:consultantbpm@gmail.com">consultantbpm@gmail.com</a>.</p>
-
-    <footer>
-        © 2026 Consultant BPM — High Contrast Large Retro CLR
-    </footer>
-</main>
-</body>
-</html>
+a {
+    color: var(--fg);
+    text-decoration: underline;
+    text-decoration-color: var(--accent);
+    text-decoration-thickness: 2px;
+   
