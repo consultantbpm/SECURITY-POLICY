@@ -7,7 +7,7 @@
 <title>Politica de Confidențialitate — High Contrast Large Retro CLR</title>
 <style>
 :root {
-    color-scheme: light dark;
+    color-scheme: light only;
     --bg-page: #f5f3ee;
     --bg-card: #ffffff;
     --fg: #1a1a1a;
@@ -18,20 +18,6 @@
     --accent-bar: #1a1a1a;
     --rule: #ece8df;
     --shadow: 0 8px 32px rgba(20, 18, 12, 0.06), 0 2px 6px rgba(20, 18, 12, 0.04);
-}
-@media (prefers-color-scheme: dark) {
-    :root {
-        --bg-page: #0a0a0a;
-        --bg-card: #161412;
-        --fg: #f3f1ec;
-        --fg-soft: #c7c4bd;
-        --fg-muted: #7d7a72;
-        --accent: #ffcc00;
-        --accent-soft: #2a2206;
-        --accent-bar: #ffcc00;
-        --rule: #2a2622;
-        --shadow: 0 12px 48px rgba(0, 0, 0, 0.5), 0 2px 6px rgba(0, 0, 0, 0.3);
-    }
 }
 
 * { box-sizing: border-box; }
@@ -151,4 +137,85 @@ a {
     text-decoration: underline;
     text-decoration-color: var(--accent);
     text-decoration-thickness: 2px;
-   
+    text-underline-offset: 3px;
+    font-weight: 500;
+    transition: color 0.15s;
+}
+a:hover {
+    color: var(--accent);
+}
+
+footer {
+    margin-top: 32px;
+    color: var(--fg-muted);
+    font-size: 0.8rem;
+    text-align: center;
+    letter-spacing: 0.02em;
+}
+
+@media (max-width: 560px) {
+    body { padding: 16px 12px 48px; }
+    .card { padding: 28px 22px; border-radius: 12px; }
+    section { grid-template-columns: 36px 1fr; gap: 14px; padding: 18px 0; }
+    .num { width: 28px; height: 28px; font-size: 0.82rem; }
+}
+</style>
+</head>
+<body>
+<main>
+    <p class="eyebrow">Privacy Policy · v1.0</p>
+    <h1>Politica de Confidențialitate</h1>
+    <p class="updated">Aplicație: High Contrast Large Retro CLR · Ultima actualizare 30 aprilie 2026</p>
+
+    <div class="card">
+        <div class="intro">
+            <p>Această politică descrie modul în care <a href="mailto:consultantbpm@gmail.com">consultantbpm@gmail.com</a> colectează, utilizează și protejează informațiile tale atunci când folosești aplicația.</p>
+        </div>
+
+        <section>
+            <div class="num">1</div>
+            <div>
+                <h2>Colectarea și utilizarea informațiilor</h2>
+                <p>Nu solicităm să ne furnizați informații de identificare personală.</p>
+            </div>
+        </section>
+
+        <section>
+            <div class="num">2</div>
+            <div>
+                <h2>Date de jurnal (Log Data)</h2>
+                <p>În cazul unei erori în aplicație, colectăm date și informații prin intermediul unor produse terțe (prin Google Log Data). Acestea pot include adresa IP a dispozitivului, numele dispozitivului, versiunea sistemului de operare și ora/data utilizării.</p>
+            </div>
+        </section>
+
+        <section>
+            <div class="num">3</div>
+            <div>
+                <h2>Securitate</h2>
+                <p>Depunem eforturi pentru a folosi mijloace comerciale acceptabile de protejare a datelor. Totuși, nicio metodă de transmitere pe internet nu este 100% sigură.</p>
+            </div>
+        </section>
+
+        <section>
+            <div class="num">4</div>
+            <div>
+                <h2>Link-uri către alte site-uri</h2>
+                <p>Acest serviciu nu conține link-uri către alte site-uri.</p>
+            </div>
+        </section>
+
+        <section>
+            <div class="num">5</div>
+            <div>
+                <h2>Contact</h2>
+                <p>Pentru întrebări sau sugestii despre politica noastră de confidențialitate, contactați-ne la <a href="mailto:consultantbpm@gmail.com">consultantbpm@gmail.com</a>.</p>
+            </div>
+        </section>
+    </div>
+
+    <footer>
+        © 2026 Consultant BPM · High Contrast Large Retro CLR
+    </footer>
+</main>
+</body>
+</html>
